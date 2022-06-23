@@ -1,0 +1,30 @@
+
+<div style="padding: 10px; text-align: center">{{title}}</div>
+
+<mat-tab-group  mat-align-tabs="start">
+    <mat-tab (click)="showAllSurvayes()" label="All Surveys">Content 1</mat-tab>
+    <mat-tab (click)="showAllExpired()" label="expired">Content 2</mat-tab>
+    <mat-tab (click)="showAllClosed()" label="closed">Content 3</mat-tab>
+    <mat-tab (click)="showAllPublished()" label="Published">Content 1</mat-tab>
+</mat-tab-group>
+
+
+
+
+<mat-toolbar>
+    <mat-form-field style="width: 100%" floatLabel='never'>
+    <input
+           matInput
+           [(ngModel)]="searchText"
+           placeholder="Search"
+           autocomplete="off" >
+  </mat-form-field>
+  </mat-toolbar>
+<h1>  {{recievedSurvey}} 
+</h1>
+
+  <div class="example-button-row">
+    <button mat-raised-button (click)="openDialog()" >Dashboard</button>
+    </div>
+
+<app-home [homeSurvey]="containerSurveys | searchFilter: searchText" ></app-home>

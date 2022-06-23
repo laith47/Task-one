@@ -1,0 +1,17 @@
+.card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-left: 20px;
+    padding-bottom: 20px;
+
+  }
+  .pagination ::ng-deep .ngx-pagination .current {
+    background: rgb(24, 194, 24);
+    
+  }
+
+  div .pagination ::ng-deep .ngx-pagination{
+      display:inline-block;
+  }
+

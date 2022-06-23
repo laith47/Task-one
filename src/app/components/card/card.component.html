@@ -1,0 +1,18 @@
+<mat-card   (click)=" selectedCardValue(survey);" tabindex={{index}} tabindex="" [ngClass]="{'example-card ':survey.SURVEY_STATUS_EN=='Published' , 
+ 'example-card-expired card-width':survey.SURVEY_STATUS_EN=='Expired' }" class="update" class="example-card"
+  class="card-width">
+
+  <mat-icon [ngClass]="{'mat-icon-expired' : survey.SURVEY_STATUS_EN=='Expired'}" class="icon-status">{{changeIcon()}}
+  </mat-icon>
+  <mat-card-header>
+    <mat-card-title>{{survey.TemplateName}}</mat-card-title>
+  </mat-card-header>
+
+
+  <span *ngIf="date?.length==1">{{date?.[0]?.START_DATE | date}}</span>
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="date?.length>1">Select Period </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let period of date">{{period.START_DATE | date}} {{period.END_DATE | date}}</button>
+  </mat-menu>
+</mat-card>
+

@@ -1,0 +1,10 @@
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+    color: rgb(24, 194, 24);
+  }
+  button.mat-focus-indicator.mat-raised-button.mat-button-base {
+    background-color: rgb(24, 194, 24);
+    color:white;
+    margin:30px
+}

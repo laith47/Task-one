@@ -1,0 +1,21 @@
+<div>
+  <mat-icon (click)="onToggleShowList()">view_list</mat-icon>
+<mat-icon (click)="onToggleShowCard()">view_module</mat-icon>
+</div>
+
+<!-- <div #name></div> -->
+
+<app-survey-table *ngIf="showList" [tableSurvey]="homeSurvey "></app-survey-table>
+
+<div class="card-wrapper" *ngIf="showCard">
+  <app-card   *ngFor="let singleSurvey of homeSurvey" [survey]="singleSurvey">
+
+  </app-card>
+  <!-- <div>
+    <pagination-controls class="pagination" (pageChange)="page =$event"> </pagination-controls>
+  </div> -->
+  <!-- <div class="pagination">
+  <mat-paginator [length]="surveyLength" [pageSizeOptions]="[8, 12]" aria-label="Select page">
+  </mat-paginator>
+</div> -->
+</div>
